@@ -1,0 +1,30 @@
+
+<odoo>
+    <data>
+
+        <!-- Add start and end time of task to task form view -->
+        <record id="timesheet_form_start_end" model="ir.ui.view">
+            <field name="inherit_id" ref="timesheet_grid.timesheet_view_form"/>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <field name="date" position="after">
+                    <field name="start_time" widget="timesheet_uom"/>
+                    <field name="end_time" widget="timesheet_uom"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Add start and end time of task to task tree view -->
+        <record id="timesheet_tree_start_end" model="ir.ui.view">
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="model">account.analytic.line</field>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="start_time" widget="timesheet_uom"/>
+                    <field name="end_time" widget="timesheet_uom"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+ </odoo>
